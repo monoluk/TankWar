@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import static javax.imageio.ImageIO.read;
 
-public class Player {
+public class Player extends Collisonable {
     private double x;
     private double y;
     private double angle;
@@ -14,12 +14,12 @@ public class Player {
     private final double ROTATIONSPEED = 6;
     private int health;
     private boolean dead;
+    private int playerIndex;
 
     private double vx;
     private double vy;
     private double speed=6;
     private BufferedImage img;
-    private boolean touchBorder = false;
 
     private long firingTimer;
     private long firingDelay;
@@ -39,6 +39,7 @@ public class Player {
         this.vy = vy;
         this.img = img;
         this.angle = angle;
+        playerIndex = x==200? 0:1;
 
         dead = false;
         firingTimer = System.nanoTime();
@@ -50,11 +51,11 @@ public class Player {
     public double getr() {return r;}
     public double getAngle() {return angle;}
     public boolean isDead() {return dead;}
+    public int getPlayerIndex() {return playerIndex;}
 
     public void setX (double x){ this.x = x;}
     public void setY (double x){ this.y = y;}
     public void setAngle (double angle){ this.angle = angle;}
-
 
     void toggleUpPressed() {
         this.UpPressed = true;
@@ -91,6 +92,7 @@ public class Player {
     void unToggleLeftPressed() {
         this.LeftPressed = false;
     }
+
     void untoggleShootPressed(){
         this.ShootPressed = false;
     }
@@ -123,8 +125,7 @@ public void update(){
     }
 
     private void moveBackwards() {
-//        vx = (int) Math.round(speed * Math.cos(Math.toRadians(angle)));
-//        vy = (int) Math.round(speed * Math.sin(Math.toRadians(angle)));
+
         vx = Math.round(speed * Math.cos(Math.toRadians(angle)));
         vy = Math.round(speed * Math.sin(Math.toRadians(angle)));
         x -= vx;
@@ -133,64 +134,51 @@ public void update(){
     }
 
     private void moveForwards() {
-//        vx = (int) Math.round(speed * Math.cos(Math.toRadians(angle)));
-//        vy = (int) Math.round(speed * Math.sin(Math.toRadians(angle)));
 
         vx = Math.round(speed * Math.cos(Math.toRadians(angle)));
         vy = Math.round(speed * Math.sin(Math.toRadians(angle)));
-
         x += vx;
         y += vy;
         checkBorder();
+
     }
 
     private void shooting(){
         long timeElapsed = (System.nanoTime() - firingTimer) / 1000000;
         if (timeElapsed >= firingDelay) {
             BufferedImage bulletImg = Helper.loadImg("Bullet.gif");
-            GamePanel.bullets.add(new Bullet(angle, x, y,"player", bulletImg));
+            GamePanel.bullets.add(new Bullet(angle, x, y,playerIndex, bulletImg));
             firingTimer = System.nanoTime();
         }
     }
 
-    private boolean checkBorder() {
-        boolean touchBorder = false;
-
+    private void checkBorder() {
         if (x < 0) {
             x = 0;
-            touchBorder = true;
         }
         if (x >= GamePanel.SCREENWIDTH - 88) {
             x = GamePanel.SCREENWIDTH - 88;
-            touchBorder = true;
         }
         if (y < 0) {
             y = 0;
-            touchBorder = true;
         }
         if (y >= GamePanel.SCREENHEIGHT - 80) {
             y = GamePanel.SCREENHEIGHT - 80;
-            touchBorder = true;
         }
-        return touchBorder;
+
     }
 
-//    private boolean touchBorder() {
-//
-//        if (x < 30) {
-//            touchBorder = true;
-//        }
-//        if (x >= GamePanel.SCREENWIDTH - 88) {
-//            touchBorder = true;
-//        }
-//        if (y < 40) {
-//            touchBorder = true;
-//        }
-//        if (y >= GamePanel.SCREENHEIGHT - 80) {
-//            touchBorder = true;
-//        }
-//        return touchBorder;
-//    }
+    public void checkWall(double wallX, double wallY) {
+        if (x > wallX-37 && x<wallX+40 && y > wallY-37 && y<wallY+40) {
+            if(UpPressed) {
+                x -= vx;
+                y -= vy;
+            }else{
+                x += vx;
+                y += vy;
+            }
+        }
+    }
 
     @Override
     public String toString() {

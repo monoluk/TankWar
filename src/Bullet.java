@@ -1,10 +1,10 @@
-import com.sun.tools.javac.Main;
+
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-public class Bullet {
+public class Bullet extends Collisonable {
 
     private double x;
     private double y;
@@ -16,15 +16,15 @@ public class Bullet {
     private double speed;
     private double angle;
     private BufferedImage img;
-    String shotby;
+    private int shotBy;
 
-
-    public Bullet(double angle, double x , double y, String shotby,BufferedImage img){
+    //shotBy -- "2" represents bullet shot by enemy, "0", "1" represents player1 & player2
+    public Bullet(double angle, double x , double y, int shotBy,BufferedImage img){
 
         this.x = x+25;
         this.y = y+25;
         this.angle = angle;
-        this.shotby = shotby;
+        this.shotBy = shotBy;
         r=5;
         this.img = img;
         speed = 15;
@@ -39,7 +39,7 @@ public class Bullet {
     public double getx() {return x;}
     public double gety() {return y;}
     public double getr() {return r;}
-    public String getShotBy () {return shotby;}
+    public int getShotBy () {return shotBy;}
 
     public boolean update(){
         x += dx;

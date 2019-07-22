@@ -21,7 +21,7 @@ public class GamePanel extends JPanel implements Runnable{
     private int fps =30;
     private double avgFps;
     private boolean isRunning;
-    private int enemyNum=2;
+    private int enemyNum=0;
     private long waveTimer;
     private long waveDelay=2000;
     private long spawnTimer;
@@ -29,12 +29,18 @@ public class GamePanel extends JPanel implements Runnable{
     private double originSpawnPosX = 200;
     private double originSpawnPosy = 200;
     private double originAngle = 0;
+    private Player collidedPlayer=null;
+    private int collidedPlayerIndex;
+    private double oldAngle;
 
     public static Background bg;
+    public static ArrayList<Wall> walls;
     public static ArrayList<Player> players;
     public static ArrayList<Bullet> bullets;
     public static ArrayList<Enemy> enemies;
     public static ArrayList<Explosion> explosions;
+    public static ArrayList<PowerUp> powerUps;
+
 
     public GamePanel(){
         super();
@@ -73,23 +79,39 @@ public class GamePanel extends JPanel implements Runnable{
         BufferedImage bgImg = Helper.loadImg("Background.bmp");
         bg = new Background(bgImg);
         players = new ArrayList<Player>();
+
         //create player 1
-        BufferedImage t1img = Helper.loadImg("Tank1.gif");
+        BufferedImage t1img = Helper.loadImg("Tank1.png");
         players.add( new Player(200, 200, 0, 0, 0, t1img));
         PlayerControl tc1 = new PlayerControl(players.get(0), KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_M);
         this.addKeyListener(tc1);
 
 
-//        //create player 2
-//        BufferedImage t2img = Helper.loadImg("Tank2.gif");
-//        t2 = new Player(500, 200, 0, 0, 0, t2img);
-//        PlayerControl tc2 = new PlayerControl(t2, KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_SPACE);
-//        this.addKeyListener(tc2);
+        //create player 2
+        BufferedImage t2img = Helper.loadImg("Tank2.gif");
+        players.add(new Player(500, 200, 0, 0, 0, t2img));
+        PlayerControl tc2 = new PlayerControl(players.get(1), KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_SPACE);
+        this.addKeyListener(tc2);
 
 
+        walls = new ArrayList<Wall>();
         bullets = new ArrayList<Bullet>();
         enemies = new ArrayList<Enemy>();
         explosions = new ArrayList<Explosion>();
+        powerUps = new ArrayList<PowerUp>();
+
+        //create walls
+        for(double i =20; i<550; ){
+            BufferedImage wallImg = Helper.loadImg("Wall1.gif");
+            walls.add(new Wall(i,400,false, wallImg));
+            i += 32;
+        }
+
+        for(double i =80; i<680; ){
+            BufferedImage wallImg = Helper.loadImg("Wall1.gif");
+            walls.add(new Wall(800,i,false, wallImg));
+            i += 32;
+        }
 
 
         long startTime;
@@ -147,6 +169,7 @@ public class GamePanel extends JPanel implements Runnable{
         for (int i=0; i<players.size();i++) {
             players.get(i).update();
         }
+
         //generate enemies
         long elapsed = (System.nanoTime() - waveTimer)/1000000;
         if(enemies.isEmpty() && elapsed>=waveDelay) {
@@ -177,28 +200,27 @@ public class GamePanel extends JPanel implements Runnable{
         //bullet-enemy & bullet-player collision
         for(int i=0; i<bullets.size(); i++) {
             Bullet b = bullets.get(i);
-            double bx = b.getx();
-            double by = b.gety();
-            double br = b.getr();
 
             //loop through all enemies to check bullet-enemy collision
             for (int j = 0; j < enemies.size(); j++) {
                 Enemy e = enemies.get(j);
-                double ex = e.getx();
-                double ey = e.gety();
-                double er = e.getr();
-                double eangle = e.getAngle();
 
-                double dx = bx - ex;
-                double dy = by - ey;
-                double dist = Math.sqrt(dx * dx - dy * dy);
-                if (dist <= (br + er) && b.getShotBy().equals("player")) {
+                double dist = Helper.getDistance(b,e);
+
+                if (dist <= (b.getr() + e.getr()) && b.getShotBy() <2) {
                     e.hit();
                     if (e.isDead()) {
                         BufferedImage explosionImg = Helper.loadImg("Explosion_small.gif");
-                        GamePanel.explosions.add(new Explosion(eangle, ex, ey, explosionImg));
+                        GamePanel.explosions.add(new Explosion(e.getAngle(), e.getx(), e.gety(), explosionImg));
                         enemies.remove(j);
                         j--;
+                        //chances for getting powerups
+                        double chance = Math.random();
+                        if(chance<0.5){
+                            BufferedImage powerUpImg = Helper.loadImg("Rocket.gif");
+                            powerUps.add(new PowerUp(1, e.getx(),e.gety(),powerUpImg));
+                        }
+
                         if (enemies.isEmpty()) waveTimer = System.nanoTime();
                     }
                     if (bullets.size() > 0) {
@@ -211,19 +233,17 @@ public class GamePanel extends JPanel implements Runnable{
             //loop through all player to check bullet-player collision
             for (int k = 0; k < players.size(); k++) {
                 Player p = players.get(k);
-                double px = p.getx();
-                double py = p.gety();
-                double pr = p.getr();
-                double pAngle = p.getAngle();
-                double dx = bx - px;
-                double dy = by - py;
-                double PBdist = Math.sqrt(dx * dx + dy * dy);
-                if (PBdist <= (br + pr) && b.getShotBy().equals("enemy")) {
+
+                double PBdist = Helper.getDistance(b,p);
+                //if (PBdist <= (br + pr) && b.getShotBy().equals("enemy")) {
+
+
+                if (PBdist <= (b.getr() + p.getr()) && b.getShotBy() != p.getPlayerIndex()) {
                     p.hit();
 
                     if (p.isDead()) {
                         BufferedImage explosionImg = Helper.loadImg("Explosion_small.gif");
-                        GamePanel.explosions.add(new Explosion(pAngle, px, py, explosionImg));
+                        GamePanel.explosions.add(new Explosion(p.getAngle(), p.getx(), p.gety(), explosionImg));
                         p.setX(originSpawnPosX);
                         p.setY(originSpawnPosy);
                         p.setAngle(originAngle);
@@ -236,22 +256,13 @@ public class GamePanel extends JPanel implements Runnable{
         //check for bullet-bullet collision
         for(int i=0; i<bullets.size(); i++) {
             Bullet b = bullets.get(i);
-            double bx = b.getx();
-            double by = b.gety();
-            double br = b.getr();
 
             if (i < bullets.size() - 1) {
                 for (int l = i + 1; l < bullets.size(); l++) {
                     Bullet b1 = bullets.get(l);
-                    double b1x = b1.getx();
-                    double b1y = b1.gety();
-                    double b1r = b1.getr();
 
-                    double dx = b1x - bx;
-                    double dy = b1y - by;
-
-                    double bbDist = Math.sqrt(dx * dx + dy * dy);
-                    if (bbDist <= 2*b1r) {
+                    double bbDist = Helper.getDistance(b,b1);
+                    if (bbDist <= 2*b1.getr()) {
                         try {
                             bullets.remove(l);
                             bullets.remove(i);
@@ -265,6 +276,76 @@ public class GamePanel extends JPanel implements Runnable{
             }
         }
 
+        //check for powerUP-player collision
+        for (int i =0; i<powerUps.size(); i++) {
+            PowerUp pow = powerUps.get(i);
+            double pType = powerUps.get(i).getType();
+
+            for(int j=0; j<players.size();j++){
+                Player pla = players.get(j);
+
+                double dist = Helper.getDistance(pow,pla);
+
+                if(dist< (pla.getr() + pow.getr())){
+                    if(pType==1) {
+                        for(Enemy enemy : enemies){
+                            enemy.setPickOnPlay(true,j);
+                        }
+                    }
+                    powerUps.remove(i);
+                    i--;
+                }
+            }
+        }
+
+        //check for wall-player & wall-enemy collision
+        for(int i=0; i<walls.size(); i++) {
+            Wall w = walls.get(i);
+
+            players.forEach(player -> player.checkWall(w.getx(),w.gety()));
+
+          for(int k=0; k<enemies.size(); k++){
+              Enemy e = enemies.get(k);
+              double dist = Helper.getDistance(w,e);
+              if(dist < w.getr()*2){
+                  e.bounce(w.getx(),w.gety());
+              }
+          }
+        }
+
+        //bullet-wall collision
+        for(int i =0; i< bullets.size(); i++){
+            Bullet b = bullets.get(i);
+
+            for(int j=0; j<walls.size(); j++){
+                Wall w = walls.get(j);
+
+                double dist = Helper.getDistance(b,w);
+
+                if(dist<(b.getr()+w.getr())*0.9){
+                    walls.remove(j);
+                    j--;
+                    try {
+                        bullets.remove(i);
+                        i--;
+                    }catch (IndexOutOfBoundsException OB){
+                    }
+                }
+
+            }
+
+
+        }
+
+
+        //update powerUps
+        for(int i=0; i<powerUps.size(); i++){
+           boolean remove = powerUps.get(i).update();
+           if(remove){
+               powerUps.remove(i);
+               i--;
+           }
+        }
 
     }
 
@@ -277,6 +358,11 @@ public class GamePanel extends JPanel implements Runnable{
 //        g.drawString("FPS:" + avgFps, 200, 200);
 
         bg.draw(g);
+
+        //draw walls
+        walls.forEach(wall -> {
+            wall.draw(g);
+        });
 
 
         //draw players
@@ -301,6 +387,10 @@ public class GamePanel extends JPanel implements Runnable{
             enemies.get(i).draw(g);
         }
 
+        //draw PowerUps
+        powerUps.forEach(powUP->{
+            powUP.draw(g);
+        });
 
     }
 

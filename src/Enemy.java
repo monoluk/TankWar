@@ -2,11 +2,11 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-public class Enemy {
+public class Enemy extends Collisonable {
 
     private double x;
     private double y;
-    private int r;
+    private double r;
     private Color color1;
 
     private double dx;
@@ -25,6 +25,10 @@ public class Enemy {
 
     private boolean ready;
     private boolean dead;
+    private boolean pickOnPlayer;
+    private long pickOnPlayerTimer=-1;
+    private long pickOnPlayerDelay=5000;
+    private int consumedBy;
 
     public Enemy(int type, int rank, BufferedImage img){
         this.type = type;
@@ -34,8 +38,8 @@ public class Enemy {
         if(type==1){
             color1 = Color.blue;
             if(rank ==1){
-                speed =2;
-                r=15;
+                speed =10;  //was 2
+                r=18;
                 health=1;
             }
         }
@@ -73,6 +77,18 @@ public class Enemy {
     public double getr() {return r;}
     public double getAngle() {return angle;}
 
+    public void setX(double newX){this.x = newX;}
+    public void setY(double newY){this.y = newY;}
+
+
+    public void setPickOnPlay(boolean state, int consumedBy){
+        pickOnPlayerTimer = System.nanoTime();
+        pickOnPlayer = state;
+
+        //records which player pickup the powerUp
+        this.consumedBy = consumedBy;
+    }
+
     public void hit(){
             health--;
             if (health <= 0) {
@@ -85,16 +101,29 @@ public class Enemy {
         long timeElapsed = (System.nanoTime() - firingTimer) / 1000000;
         if (timeElapsed >= firingDelay) {
                 BufferedImage bulletImg = Helper.loadImg("Bullet.gif");
-                GamePanel.bullets.add(new Bullet(angle, x, y,"enemy", bulletImg));
+                //create new bullet "2" represents bullet shot by enemy, "0", "1" represents player1 & player2
+                GamePanel.bullets.add(new Bullet(angle, x, y,2, bulletImg));
             firingTimer = System.nanoTime();
         }
     }
+
+//    public void checkWall(double wallX, double wallY){
+//        if(x<wallX+40 && dx<0 &&y<wallY+40 && dy<0 || x>wallX-40 && dx>0 && y>wallY-37 && dy>0) {
+//            dx=-dx; angle =(180-angle);
+//            dy = -dy; angle = -angle;}
+//
+////        if(x>wallX-40 && dx>0 && y>wallY-37 && dy>0) { dx=-dx;
+////        angle= (180-angle);
+////        dy = -dy;
+////        angle = -angle;}
+//
+//    }
+
 
     public boolean isDead(){return dead;}
 
 
     public void update(){
-
 
         x += dx;
         y += dy;
@@ -105,31 +134,68 @@ public class Enemy {
             }
         }
 
+        //bounce from border
         if(x<r && dx<0) {dx=-dx; angle =(180-angle);}
         if(y<r && dy<0) {dy = -dy; angle = -angle;}
         if(x>GamePanel.SCREENWIDTH - r && dx>0) {dx=-dx; angle= (180-angle); }
         if(y>GamePanel.SCREENHEIGHT - r && dy>0) {dy = -dy; angle = -angle;}
 
+        //check if powerUp tpye 1 expires
+        double elapsed = (System.nanoTime()-pickOnPlayerTimer)/1000000;
+        if(elapsed > pickOnPlayerDelay && pickOnPlayerTimer>0) {
+            pickOnPlayer = false;
+            //angle = Math.random()*140 +20;
+            angle = Math.random()*3*100+20;
+            radian = Math.toRadians(angle);
+            dx = Math.cos(radian)*speed;
+            dy = Math.sin(radian)*speed;
+            pickOnPlayerTimer = -1;
+        }
+
         //enemy follows player
+        if(pickOnPlayer) {
         radian = Math.toRadians(angle);
         dx = Math.cos(radian)*speed;
         dy = Math.sin(radian)*speed;
 
-        double targetY = GamePanel.players.get(0).gety()-y;
-        double targetX = GamePanel.players.get(0).getx()-x;
+        int target = consumedBy==0? 1:0;
+
+        double targetY = GamePanel.players.get(target).gety()-y;
+        double targetX = GamePanel.players.get(target).getx()-x;
         angle = Math.toDegrees(Math.atan(targetY/targetX));
 
         if(angle<90 && angle>-90){
-            if(x>GamePanel.players.get(0).getx())
-            {System.out.println("add 180");
+            if(x>GamePanel.players.get(target).getx())
+            { //System.out.println("add 180");
             angle = angle+180;}
         }
-
-
-
-
+        }
 
         shooting();
+    }
+
+
+    public void bounce(double wallX, double wallY){
+        if(x<wallX+37 && x>wallX-37 && y<wallY+37 && y>wallY-37)
+        {
+           
+            if(this.x -wallX > this.y-wallY){
+            dx=-dx;
+            angle =(180-angle);}
+            else {
+                dy = -dy;
+                angle = -angle;
+            }
+        }
+
+//        if(y<wallY+37 && y>wallY-37)
+//        {
+//        dy = -dy;
+//
+//        }
+
+        //if(x>GamePanel.SCREENWIDTH - r && dx>0) {dx=-dx; angle= (180-angle); }
+        //if(y>GamePanel.SCREENHEIGHT - r && dy>0) {dy = -dy; angle = -angle;}
     }
 
     public void draw(Graphics2D g){
