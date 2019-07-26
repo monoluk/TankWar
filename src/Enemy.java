@@ -176,18 +176,39 @@ public class Enemy extends Collisonable {
 
 
     public void bounce(double wallX, double wallY){
-        if(x<wallX+37 && x>wallX-37 && y<wallY+37 && y>wallY-37)
-        {
-           
-            if(this.x -wallX > this.y-wallY){
-            dx=-dx;
-            angle =(180-angle);}
-            else {
-                dy = -dy;
-                angle = -angle;
-            }
+//        if(x<wallX+37 && x>wallX-37 && y<wallY+37 && y>wallY-37)
+//        {
+//
+//            if(this.x -wallX > this.y-wallY ){
+//            dx=-dx;
+//            angle =(180-angle);}
+//            else {
+//                dy = -dy;
+//                angle = -angle;
+//            }
+
+System.out.println("Wx: "+wallX+ " Wy: "+wallY);
+System.out.println("x: "+this.x +" y: "+ this.y);
+
+
+        if(this.x < (wallX+100) && this.x > (wallY-100) ){
+            System.out.println("horizontal");
+            dx = -dx;
+            angle = 180-angle;
+
+        if (this.y < (wallY+100) && this.y > (wallY-100) ) {
+            System.out.println("vertical");
+            dy = -dy;
+            angle = -angle;
         }
 
+
+
+
+
+
+
+        }
 //        if(y<wallY+37 && y>wallY-37)
 //        {
 //        dy = -dy;

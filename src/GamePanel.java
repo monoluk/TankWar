@@ -11,13 +11,14 @@ import static javax.imageio.ImageIO.read;
 
 public class GamePanel extends JPanel implements Runnable{
 
-    public static final int SCREENWIDTH = 1280;
-    public static final int SCREENHEIGHT = 960;
+    public static final int SCREENWIDTH = 1366;//1280;
+    public static final int SCREENHEIGHT = 768;//960;
 
     private Thread thread;
 
     private Graphics2D g;
     private BufferedImage image;
+    private Image leftSide, rightSide, miniMap;
     private int fps =30;
     private double avgFps;
     private boolean isRunning;
@@ -107,7 +108,7 @@ public class GamePanel extends JPanel implements Runnable{
             i += 32;
         }
 
-        for(double i =80; i<680; ){
+        for(double i =180; i<680; ){
             BufferedImage wallImg = Helper.loadImg("Wall1.gif");
             walls.add(new Wall(800,i,false, wallImg));
             i += 32;
@@ -307,35 +308,35 @@ public class GamePanel extends JPanel implements Runnable{
           for(int k=0; k<enemies.size(); k++){
               Enemy e = enemies.get(k);
               double dist = Helper.getDistance(w,e);
-              if(dist < w.getr()*2){
+              if(dist < (w.getr()+e.getr())){
                   e.bounce(w.getx(),w.gety());
               }
           }
         }
 
         //bullet-wall collision
-        for(int i =0; i< bullets.size(); i++){
-            Bullet b = bullets.get(i);
-
-            for(int j=0; j<walls.size(); j++){
-                Wall w = walls.get(j);
-
-                double dist = Helper.getDistance(b,w);
-
-                if(dist<(b.getr()+w.getr())*0.9){
-                    walls.remove(j);
-                    j--;
-                    try {
-                        bullets.remove(i);
-                        i--;
-                    }catch (IndexOutOfBoundsException OB){
-                    }
-                }
-
-            }
-
-
-        }
+//        for(int i =0; i< bullets.size(); i++){
+//            Bullet b = bullets.get(i);
+//
+//            for(int j=0; j<walls.size(); j++){
+//                Wall w = walls.get(j);
+//
+//                double dist = Helper.getDistance(b,w);
+//
+//                if(dist<(b.getr()+w.getr())*0.9){
+//                    walls.remove(j);
+//                    j--;
+//                    try {
+//                        bullets.remove(i);
+//                        i--;
+//                    }catch (IndexOutOfBoundsException OB){
+//                    }
+//                }
+//
+//            }
+//
+//
+//        }
 
 
         //update powerUps
@@ -399,6 +400,75 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics g2 = this.getGraphics();
         g2.drawImage(image,0,0,null);
         g2.dispose();
+
+//        BufferedImage mySubimage1 = image.getSubimage(0, 0, 500, 400);
+//        BufferedImage mySubimage2 = image.getSubimage(500,0,500,400);
+//        Image miniMap = image.getScaledInstance(400,225, Image.SCALE_FAST);
+//        g2.drawImage(mySubimage1,0,0,null);
+//        g2.drawImage(mySubimage2,500,0,null);
+//        g2.drawImage(miniMap, 200, 410, null);
+//        g2.dispose();
+
+//        int xLeft, yLeft, xRight, yRight, width, height;
+//        xLeft = (int)players.get(1).getx() - 120;
+//        yLeft =(int) players.get(1).gety() - 300;
+//        xRight = (int) players.get(0).getx() - 120;
+//        yRight =(int) players.get(0).gety() - 300;
+//
+//        width = 400;
+//        height = 600;
+//        if (xLeft < 0) {
+//            xLeft = 0;
+//        }
+//
+//        if (xRight < 0) {
+//            xRight = 0;
+//        }
+//
+//        if (yLeft < 0) {
+//            yLeft = 0;
+//        }
+//
+//        if (yRight < 0) {
+//            yRight = 0;
+//        }
+//        if (xLeft + width > 1490) {
+//            xLeft = 1095;
+//        }
+//
+//        if (xRight + width > 1490) {
+//            xRight = 1095;
+//        }
+//
+//        if (yLeft + height > 900) {
+//            yLeft = 300;
+//        }
+//
+//        if (yRight + height > 900) {
+//            yRight = 300;
+//        }
+//
+//        leftSide = image.getSubimage(xLeft, yLeft, width, height);
+//        rightSide = image.getSubimage(xRight, yRight, width, height);
+//
+//        leftSide = leftSide.getScaledInstance(800, 900, Image.SCALE_FAST);
+//        rightSide = rightSide.getScaledInstance(800, 900, Image.SCALE_FAST);
+//        miniMap = image.getScaledInstance(400, 225, Image.SCALE_FAST);
+//
+//        // render and grab single frame
+//        BufferedImage display = new BufferedImage(SCREENWIDTH, SCREENHEIGHT,
+//                BufferedImage.TYPE_INT_RGB);
+//        Graphics temp = display.getGraphics();
+//
+//        temp.drawImage(leftSide, 0, 0, null);
+//        temp.drawImage(rightSide, 0, 0, null);
+//        temp.drawImage(miniMap, 600, 640, null);
+//
+//        // draw left side, right side and minimap images on screen
+//        g2.drawImage(leftSide, 0, 0, this);
+//        g2.drawImage(rightSide, 800, 0, this);
+//        g2.drawImage(miniMap, 575, 600, this);
+
     }
 
     public void popExplosion(){
