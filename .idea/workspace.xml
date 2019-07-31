@@ -2,22 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e9aefc9-81bb-4939-9bc6-d28afd622736" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Background.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Collisonable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Collisonable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Explosion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/PlayerControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/PlayerControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/PowerUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/PowerUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tankWar/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Background.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Explosion_large.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Explosion_small.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rocket.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tank1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tank2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wall1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Background.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Bullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Collisonable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Explosion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/GamePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Helper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/PlayerControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/PowerUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tankWar/Wall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pixil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Background.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collisonable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Explosion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PowerUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wall.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,78 +51,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GamePanel.java">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5865">
-              <caret line="400" selection-start-line="400" selection-end-line="401" selection-end-column="21" />
+            <state relative-caret-position="305">
+              <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Enemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#14432#14433#0" expanded="true" />
+                <element signature="e#14486#14487#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wall.java">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Background.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PowerUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="46" selection-start-line="46" selection-end-line="47" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bullet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-320">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -113,10 +77,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+            <state relative-caret-position="181">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/GameConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="74" column="19" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/menus/StartMenuPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/menus/EndGamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/Background.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Enemy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +179,15 @@
       <find>blocked</find>
       <find>block</find>
       <find>image</find>
+      <find>random</find>
+      <find>power</find>
+      <find>exp</find>
+      <find>explosionIm</find>
+      <find>system.out</find>
+      <find>hit()</find>
+      <find>health</find>
+      <find>system</find>
+      <find>hit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,24 +200,54 @@
         <option value="$PROJECT_DIR$/src/bullet.java" />
         <option value="$PROJECT_DIR$/src/PlayerControl.java" />
         <option value="$PROJECT_DIR$/src/background.java" />
-        <option value="$PROJECT_DIR$/src/Background.java" />
         <option value="$PROJECT_DIR$/src/Explosion.java" />
         <option value="$PROJECT_DIR$/src/PowerUp.java" />
         <option value="$PROJECT_DIR$/src/Collisonable.java" />
         <option value="$PROJECT_DIR$/src/Helper.java" />
         <option value="$PROJECT_DIR$/src/Bullet.java" />
         <option value="$PROJECT_DIR$/src/Wall.java" />
+        <option value="$PROJECT_DIR$/src/Background.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/GameConstants.java" />
+        <option value="$PROJECT_DIR$/src/menus/EndGamePanel.java" />
+        <option value="$PROJECT_DIR$/src/game/Bullet.java" />
+        <option value="$PROJECT_DIR$/src/game/Collisonable.java" />
+        <option value="$PROJECT_DIR$/src/game/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/game/Explosion.java" />
+        <option value="$PROJECT_DIR$/src/game/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/game/Helper.java" />
+        <option value="$PROJECT_DIR$/src/game/PowerUp.java" />
+        <option value="$PROJECT_DIR$/src/game/Wall.java" />
+        <option value="$PROJECT_DIR$/src/game/Player.java" />
+        <option value="$PROJECT_DIR$/src/game/Background.java" />
+        <option value="$PROJECT_DIR$/src/game/PlayerControl.java" />
+        <option value="$PROJECT_DIR$/src/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/menus/StartMenuPanel.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/Collisonable.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/Explosion.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/collisonable/Bullet.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/PlayerControl.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/collisonable/PowerUp.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/collisonable/Explosion.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/menus/StartMenuPanel.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/menus/EndGamePanel.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/GameConstants.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/Background.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/Helper.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/collisonable/Player.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/collisonable/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/tankwar/game/GamePanel.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1301" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="351" />
+    <option name="y" value="23" />
+    <option name="width" value="1818" />
+    <option name="height" value="1336" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -182,24 +257,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="TankWar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TankWar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tankwar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tankwar" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tankwar" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="collisonable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tankWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tankWar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tankwar" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,7 +334,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="tankWar" />
@@ -239,8 +342,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tankwar.Launcher" />
+      <module name="tankWar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tankwar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
@@ -270,14 +387,19 @@
       <workItem from="1563897052172" duration="3737000" />
       <workItem from="1563912825042" duration="2981000" />
       <workItem from="1563915880959" duration="701000" />
+      <workItem from="1564115867356" duration="1541000" />
+      <workItem from="1564373862175" duration="1115000" />
+      <workItem from="1564448738325" duration="7188000" />
+      <workItem from="1564505491460" duration="2739000" />
+      <workItem from="1564511383942" duration="10876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154311000" />
+    <option name="totallyTimeSpent" value="177770000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="4" />
+    <frame x="351" y="23" width="1818" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -285,21 +407,21 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19203188" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14245495" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5005631" side_tool="true" weight="0.27813506" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.27925116" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49943694" weight="0.27813506" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32761312" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32636657" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -319,103 +441,280 @@
     <SUITE FILE_PATH="coverage/tankWar$Game.ic" NAME="Game Coverage Results" MODIFIED="1563335069538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Objects.java" />
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bullet.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Background.jpg" />
-    <entry file="file://$PROJECT_DIR$/Tank1.gif" />
-    <entry file="file://$PROJECT_DIR$/Background.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rocket.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Collisonable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Explosion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Explosion.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/PlayerControl.java">
+    <entry file="file://$PROJECT_DIR$/src/Wall.java" />
+    <entry file="file://$PROJECT_DIR$/src/Background.java" />
+    <entry file="file://$PROJECT_DIR$/src/PowerUp.java" />
+    <entry file="file://$PROJECT_DIR$/src/Helper.java" />
+    <entry file="file://$PROJECT_DIR$/Background.java" />
+    <entry file="file://$PROJECT_DIR$/Bullet.java" />
+    <entry file="file://$PROJECT_DIR$/src/Player.java" />
+    <entry file="file://$PROJECT_DIR$/src/Bullet.java" />
+    <entry file="file://$PROJECT_DIR$/src/PlayerControl.java" />
+    <entry file="file://$PROJECT_DIR$/src/Enemy.java" />
+    <entry file="file://$PROJECT_DIR$/../tankrotationStartEnd/src/tankrotationexample/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java" />
+    <entry file="file://$PROJECT_DIR$/src/GamePanel.java" />
+    <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Collisonable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Explosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menus/EndGamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/game/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
-          <caret line="400" selection-start-line="400" selection-end-line="401" selection-end-column="21" />
+        <state relative-caret-position="76">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/PowerUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wall.java">
+    <entry file="file://$PROJECT_DIR$/src/game/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Background.java">
+    <entry file="file://$PROJECT_DIR$/src/game/Background.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state relative-caret-position="38">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/PlayerControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menus/StartMenuPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Collisonable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Explosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/PlayerControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Game.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/PowerUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Explosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PowerUp.java">
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/PlayerControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="46" selection-start-line="46" selection-end-line="47" selection-end-column="48" />
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/src/tankwar/menus/StartMenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="36" />
+        <state relative-caret-position="437">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helper.java">
+    <entry file="file://$PROJECT_DIR$/src/tankwar/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="155">
+          <caret line="74" column="19" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Collisonable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/collisonable/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -423,23 +722,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/tankwar/game/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+        <state relative-caret-position="305">
+          <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#14432#14433#0" expanded="true" />
+            <element signature="e#14486#14487#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+    <entry file="file://$PROJECT_DIR$/src/tankwar/menus/EndGamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="855">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
