@@ -25,34 +25,40 @@ public class Player extends Collisonable {
     private double speed;
     private BufferedImage img;
     BufferedImage bulletImg = Helper.loadImg("resources/Bullet.gif");
+    GamePanel gp;
 
     private long firingTimer;
     private long firingDelay;
+    private long hitTimer;
 
     private boolean UpPressed;
     private boolean DownPressed;
     private boolean RightPressed;
     private boolean LeftPressed;
     private boolean ShootPressed;
+    private boolean hit;
 
     private int lives;
 
-    public Player(double x, double y, double vx, double vy, double angle, BufferedImage img){
+    public Player(double x, double y, double vx, double vy, double angle, BufferedImage img, GamePanel gp){
         this.x = x;
         this.y = y;
         this.vx = vx;
         this.vy = vy;
         this.img = img;
         this.angle = angle;
-        this.health = 2;
-        this.lives = 3;
+        this.health = GameConstants.START_HEALTH;
+        this.lives = GameConstants.START_LIFE;
         this.gameOver = false;
         this.speed = 6;
-        playerIndex = x==200? 0:1;
+        this.playerIndex = x==200? 0:1;
+        this.hit = false;
 
         dead = false;
         firingTimer = System.nanoTime();
         firingDelay = 500;
+
+        this.gp = gp;
     }
 
     public double getx() {return x;}
@@ -61,11 +67,36 @@ public class Player extends Collisonable {
     public double getAngle() {return angle;}
     public boolean isDead() {return dead;}
     public boolean isGameOver() {return gameOver;}
+    public int getLives() {return lives;}
+    public int getHealth() {return health;}
     public int getPlayerIndex() {return playerIndex;}
 
     public void setX (double x){ this.x = x;}
     public void setY (double x){ this.y = y;}
-    public void setAngle (double angle){ this.angle = angle;}
+    public void resetAngle (){
+        if(playerIndex == 1){
+            angle = 180;}
+        else{
+        this.angle = 0;}}
+    public void setDead (boolean isDead){this.dead = isDead;}
+
+    public void resetPlayers() {
+        this.y = 200;
+        resetAngle();
+
+        this.health = GameConstants.START_HEALTH;
+        this.lives =GameConstants.START_LIFE;
+        this.gameOver = false;
+
+        this.UpPressed = false;
+        this.DownPressed = false;
+        this.RightPressed = false;
+        this.LeftPressed = false;
+        this.ShootPressed = false;
+
+    }
+
+
 
     void toggleUpPressed() {
         this.UpPressed = true;
@@ -156,7 +187,7 @@ public void update(){
     private void shooting(){
         long timeElapsed = (System.nanoTime() - firingTimer) / 1000000;
         if (timeElapsed >= firingDelay) {
-            GamePanel.bullets.add(new Bullet(angle, x, y,playerIndex, bulletImg));
+            gp.addBullets(angle, x, y,playerIndex, bulletImg);
             firingTimer = System.nanoTime();
         }
     }
@@ -177,12 +208,12 @@ public void update(){
 
     }
 
-    public void checkWall(double wallX, double wallY) {
-        if (x > wallX-37 && x<wallX+40 && y > wallY-37 && y<wallY+40) {
+    public void checkBlockage(double blockX, double blockY) {
+        if (x > blockX-37 && x<blockX+40 && y > blockY-37 && y<blockY+40) {
             if(UpPressed) {
                 x -= vx;
                 y -= vy;
-            }else{
+            }else if (DownPressed){
                 x += vx;
                 y += vy;
             }
@@ -195,21 +226,31 @@ public void update(){
     }
 
     public void hit(){
-        health --;
-        if(health<=0){
-            dead = true;
-            lives--;
-            if(lives<=0){
-                gameOver = true;
+
+        hit = true;
+        if((System.nanoTime()-hitTimer)/1000000 >300) {
+            health--;
+            if (health <= 0) {
+                dead = true;
+                lives--;
+                health = GameConstants.START_HEALTH;
+                if (lives <= 0) {
+                    gameOver = true;
+                }
             }
+            hitTimer = System.nanoTime();
+            hit = false;
         }
+
     }
 
 public void draw(Graphics2D g){
+        if((System.nanoTime()-hitTimer)/1000000 >50){
     AffineTransform rotation = AffineTransform.getTranslateInstance(x, y);
     rotation.rotate(Math.toRadians(angle), this.img.getWidth() / 2.0, this.img.getHeight() / 2.0);
     Graphics2D g2d = (Graphics2D) g;
     g2d.drawImage(this.img, rotation, null);
+        }
 }
 
 }

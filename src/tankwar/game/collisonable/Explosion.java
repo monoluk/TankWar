@@ -34,7 +34,9 @@ public class Explosion extends Collisonable {
 
     public boolean update(){
         this.img = Helper.resize(img, imgwidth,imghight);
+        x-=5;
         imgwidth += 10;
+        y-=5;
         imghight += 10;
 
         long elaspsed = (System.nanoTime() - explosionTimer)/1000000;

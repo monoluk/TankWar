@@ -39,9 +39,7 @@ public class Helper {
         return img;
     }
 
-
     public static double getDistance (Collisonable obj1, Collisonable obj2){
-
         double dx = obj1.getx() - obj2.getx();
         double dy = obj1.gety() - obj2.gety();
         double distance = Math.sqrt(dx*dx + dy*dy);

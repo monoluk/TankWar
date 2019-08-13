@@ -44,7 +44,7 @@ public class Enemy extends Collisonable {
         if(type==1){
             color1 = Color.blue;
             if(rank ==1){
-                speed =6;  //was 2
+                speed =3;  //was 2
                 r=18;
                 health=1;
             }
@@ -73,6 +73,7 @@ public class Enemy extends Collisonable {
         firingTimer = System.nanoTime();
 //        firingDelay = (long) (Math.random()*10000);
 //        firingDelay = firingDelay <500? 500 : firingDelay;
+        //firingDelay = (long)((Math.random() * 1500));
         firingDelay = (long)((Math.random() * ((2000 - 500) + 1)) + 500);
 
     }
@@ -87,7 +88,7 @@ public class Enemy extends Collisonable {
     public void setY(double newY){this.y = newY;}
 
 
-    public void setPickOnPlay(boolean state, int consumedBy){
+    public void setPickOnPlayer(boolean state, int consumedBy){
         pickOnPlayerTimer = System.nanoTime();
         pickOnPlayer = state;
 
@@ -154,14 +155,19 @@ public class Enemy extends Collisonable {
             radian = Math.toRadians(angle);
             dx = Math.cos(radian)*speed;
             dy = Math.sin(radian)*speed;
+
+
+
             pickOnPlayerTimer = -1;
         }
 
         //enemy follows player
         if(pickOnPlayer) {
         radian = Math.toRadians(angle);
-        dx = Math.cos(radian)*speed;
-        dy = Math.sin(radian)*speed;
+        dx = Math.cos(radian)*speed*0.3;
+        dy = Math.sin(radian)*speed*0.3;
+//            dx = 0;
+//            dy = 0;
 
         int target = consumedBy==0? 1:0;
 

@@ -1,20 +1,21 @@
-package tankwar.game.collisonable;
+package tankwar.game.collisonable.wall;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.security.PublicKey;
 
+import tankwar.game.collisonable.*;
+
 public class Wall extends Collisonable {
 
     private double x;
     private double y;
-    private double angle;
     private final double r =32; //57;
     private boolean breakable;
     private BufferedImage img;
 
-    public Wall (double x, double y, boolean breakable, BufferedImage img){
+    public Wall (double x, double y, BufferedImage img){
 
         this.x = x ;
         this.y = y ;

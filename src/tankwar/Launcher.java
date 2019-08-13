@@ -1,9 +1,10 @@
 package tankwar;
 
 
-import tankwar.game.*;
+import tankwar.menus.*;
 import tankwar.menus.EndGamePanel;
 import tankwar.menus.StartMenuPanel;
+import tankwar.game.GamePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,7 +36,7 @@ public class Launcher {
      * end panel is used to show the end game panel.  it will contain
      * two buttons restart and exit.
      */
-    private JPanel endPanel;
+    private EndGamePanel endPanel;
     /*
      * JFrame used to store our main panel. We will also attach all event
      * listeners to this JFrame.
@@ -58,7 +59,7 @@ public class Launcher {
         this.mainPanel = new JPanel(); // create a new main panel
         this.startPanel = new StartMenuPanel(this); // create a new start panel
         this.gamePanel = new GamePanel(this); // create a new game panel
-        //this.gamePanel.gameInitialize(); // initialize game, but DO NOT start game
+        this.gamePanel.gameInit(); // initialize game, but DO NOT start game
         this.endPanel = new EndGamePanel(this); // create a new end game pane;
         cl = new CardLayout(); // creating a new CardLayout Panel
         this.jf.setResizable(false); //make the JFrame not resizable
@@ -87,6 +88,7 @@ public class Launcher {
             case "end":
                 // set the size of the jFrame to the expected size for the end panel
                 this.jf.setSize(GameConstants.END_MENU_SCREEN_WIDTH,GameConstants.END_MENU_SCREEN_HEIGHT);
+                this.endPanel.setWinner(gamePanel);
                 break;
         }
         this.cl.show(mainPanel, type); // change current panel shown on main panel tp the panel denoted by type.
